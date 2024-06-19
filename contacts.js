@@ -1,16 +1,8 @@
 import fs from "fs/promises";
 import path from "path";
 import { nanoid } from "nanoid";
-// import { colors } from "colors";
-const contactsPath = path.resolve("db", "contacts.json");
 
-// const fs = require("fs").promises;
-// const path = require("path");
-// const { nanoid } = require("nanoid");
-// const { nanoid } = await import("nanoid");
-// require("colors");
-// const contactsPath = path.resolve("db", "contacts.json");
-// const contactsPath = path.join(__dirname, "db", "contacts.json");
+const contactsPath = path.resolve("db", "contacts.json");
 
 export const listContacts = async () => {
   try {
@@ -18,7 +10,7 @@ export const listContacts = async () => {
     const contacts = JSON.parse(data);
     return contacts;
   } catch (error) {
-    console.log(error.message);
+    console.log("Error reading contacts: ", error.message);
   }
 };
 
@@ -32,7 +24,7 @@ export const getContactById = async (contactId) => {
       console.log(`There is no contact with the id: ${contactId}`);
     }
   } catch (error) {
-    console.error("Error getting contact:", error.message);
+    console.error("Error getting contact: ", error.message);
   }
 };
 
@@ -53,7 +45,7 @@ export const removeContact = async (contactId) => {
       console.log(`There is no contact with the id: ${contactId}`);
     }
   } catch (error) {
-    console.error("Error removing contact:", error.message);
+    console.error("Error removing contact: ", error.message);
   }
 };
 
@@ -66,13 +58,6 @@ export const addContact = async (name, email, phone) => {
     console.log(`${name} has been added to your contacts`);
     return newContact;
   } catch (error) {
-    console.error("Error adding contact:", error.message);
+    console.error("Error adding contact: ", error.message);
   }
 };
-
-// module.exports = {
-//   listContacts,
-//   getContactById,
-//   removeContact,
-//   addContact,
-// };
