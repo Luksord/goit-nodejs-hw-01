@@ -10,3 +10,5 @@ ADD - https://ibb.co/6B39sx6
 node index.js --action remove --id qdggE76Jtbfd9eWJHrssH
 REMOVE - https://ibb.co/Hn44rZg
 REMOVE - https://ibb.co/pjL7Bcj
+
+Pliki minigame.js i practice.js są częścią lekcji i ćwieczeń z GoIT i nie są częścią zadania domowego zawartego w index.js
